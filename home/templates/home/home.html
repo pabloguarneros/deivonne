@@ -1,0 +1,23 @@
+{% extends 'home/starter.html' %}
+{% load compress %}
+{% load static %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{% static "home/css/home.css"%}">
+{% endblock %}
+
+{% block body %}
+
+<div class="fc ac">
+    <div id="stories" class="fr v_cent h_cent">
+    </div>
+    <div id="new_contracts" class="fr v_cent h_cent">
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
