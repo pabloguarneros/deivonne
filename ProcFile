@@ -1,2 +1,1 @@
-web: gunicorn ivonnet.wsgi
-
+web: gunicorn ivonne.wsgi
