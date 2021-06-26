@@ -16,15 +16,13 @@ p{
 
 a{
     text-decoration: none;
-    color:#80B918;
 }
 a:hover{
     text-decoration: none;
-    color:#BFD200;
 }
 
 button{
-    background: #FFD639;
+    background: red;
     padding:5px;
     border-radius: 8px;
     margin:10px;
@@ -65,4 +63,8 @@ button{
 
 .fr{
     display:flex
+}
+
+#navigator{
+    justify-content: space-between;
 }

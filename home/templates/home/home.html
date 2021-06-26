@@ -1,5 +1,4 @@
 {% extends 'home/starter.html' %}
-{% load compress %}
 {% load static %}
 
 {% block head %}
@@ -20,4 +19,6 @@
 {% endblock %}
 
 {% block script %}
+<script src="{%static 'lib/eztz.min.js'%}"}></script>
+<script src="{% static 'home/js/viewContracts.js' %}"}></script>
 {% endblock %}
