@@ -1,0 +1,77 @@
+#home_wrapper{
+    width:70%;
+    align-items: stretch;
+}
+
+.one_contract{
+    margin-bottom:40px;
+}
+
+#stories, #new_contracts .one_contract{
+    background:white;
+    border:1px solid #dbdbdb;
+    border-radius:3px;
+}
+
+
+#stories, #new_contracts{
+    width:100%;
+    margin-bottom:50px;
+    max-width:500px;
+}
+.profile_head{
+    display:flex;
+    align-items:center;
+    padding:2px 20px;
+}
+
+.profile_head h4{
+    margin-left:20px;
+}
+
+
+.profile_img, .live_img{
+    border-radius:50px;
+    width:35px;
+    height:35px;
+    overflow:hidden;
+}
+
+#stories .live_img{
+    border:2px solid #FFFFFF;
+}
+
+#stories .live_nodes{
+    padding:2px;
+    border-radius:50px;
+    margin:20px;
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+#stories .live_nodes:hover{
+    background:#dbdbdb;
+}
+
+#stories{
+    height:70px;
+    overflow-x: scroll;
+}
+
+#stories img{
+    height:110%;
+    width:auto;
+}
+
+.profile_img img{
+    height:110%;
+    width:auto;
+}
+
+.poster_img img{
+height:auto;
+width:100%;
+}
+
+.one_contract .description,.one_contract .api_info{
+    padding:10px 20px;
+}

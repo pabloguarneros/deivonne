@@ -7,18 +7,48 @@
 
 {% block body %}
 
-<div class="fc ac">
-    <div id="stories" class="fr v_cent h_cent">
+<div id="home_wrappaer" class="fc ac">
+    <div id="stories" class="fr ac v_cent h_cent">
+        {% for c in contracts %}
+        <div class="live_nodes">
+            <div class="live_img">
+                {% if c.poster %}
+                <img src="{{c.poster.url}}"/>
+                {% else %}
+                <img src="{% static 'images/default/16Default.png'%}"></img>
+                {% endif %}
+                </div>
+        </div>
+        {% endfor %}
     </div>
-    <div id="new_contracts" class="fr v_cent h_cent">
+    <div id="new_contracts" class="fc v_cent h_cent">
     {% for c in contracts %}
-    <div id="contract_{{c.pk}}">
-        <h3>
+    <div id="contract_{{c.pk}}" class="one_contract fc">
+        <div class="profile_head" class="fr">
+            <div class="profile_img">
+                {% if c.poster %}
+                <img src="{{c.poster.url}}"/>
+                {% else %}
+                <img src="{% static 'images/default/16Default.png'%}"></img>
+                {% endif %}
+                </div>
+            <h4>
             {{c.title}}
-            {{c.short_description}}
-            {{c.poster}}
-            {{c.section}}
-        </h3>
+            </h4>
+        </div>
+        <div class="main_img">
+            <div class="poster_img">
+            {% if c.poster %}
+            <img src="{{c.poster.url}}"/>
+            {% else %}
+            <img src="{% static 'images/default/16Default.png'%}"></img>
+            {% endif %}
+            </div>
+        </div>
+        <div class="description">
+            {{c.hash}}
+            <p>{{c.short_description}}</p>
+        </div>
         <div class="api_info">
         </div>
     </div>
