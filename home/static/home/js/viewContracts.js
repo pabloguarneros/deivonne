@@ -1,7 +1,5 @@
 //const url = window.location.origin.concat("/api")
-// from  https://muffinman.io/blog/javascript-time-ago-function/
-
-
+// GET FORMATTED DATE FROM  https://muffinman.io/blog/javascript-time-ago-function/
 const MONTH_NAMES = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
