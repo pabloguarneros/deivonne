@@ -60,6 +60,7 @@
 #stories{
     height:70px;
     overflow-x: scroll;
+    overflow-y:hidden;
 }
 
 #stories img{
@@ -85,7 +86,13 @@ width:100%;
     font-size: 12px;
 }
 
-@media screen and (max-width:550px) {
+.live_img 
+
+.live_img button{
+    opacity:0;
+}
+
+@media screen and (max-width:650px) {
     #stories, #new_contracts{
         width:95%;
     }

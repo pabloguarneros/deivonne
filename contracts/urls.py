@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns=[
-    path('add',views.addContract,name="addContract")
+    path('<int:pk>',views.viewContract,name="contract")
 ]

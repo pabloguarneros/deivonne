@@ -8,8 +8,14 @@ from .forms import SmartContractForm
 def addContract(request):
     #if not request.user.is_authenticated:
         #return HttpResponseRedirect(reverse("login"))
+    if request.user.is_authenticated:
+        user = request.user
+    else:
+        user = False
+        
     context={
-        'form': SmartContractForm()
+        'form': SmartContractForm(),
+        'user': user
     }
     return render(request, 'contracts/createContract.html',context)
 
@@ -31,3 +37,10 @@ def addHash(request):
             contract.save()
 
         return HttpResponseRedirect("/")
+
+def viewContract(request,pk):
+    contract = SmartContract.objects.get(pk=pk)
+    context={
+        'contract': contract
+    }
+    return render(request, 'contracts/viewContract.html',context)

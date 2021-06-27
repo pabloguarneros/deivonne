@@ -16,6 +16,7 @@ p{
 
 a{
     text-decoration: none;
+    color: #262626;
 }
 a:hover{
     text-decoration: none;
@@ -100,7 +101,7 @@ button{
     outline:none;
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:650px) {
     #search_cat{
         display:none
     }

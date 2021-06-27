@@ -12,11 +12,13 @@
         {% for c in contracts %}
         <div class="live_nodes">
             <div class="live_img">
+                <a href="/c/{{c.pk}}">
                 {% if c.poster %}
                 <img src="{{c.poster.url}}"/>
                 {% else %}
                 <img src="{% static 'images/default/16Default.png'%}"></img>
                 {% endif %}
+                </a>
                 </div>
         </div>
         {% endfor %}
@@ -26,15 +28,19 @@
     <div id="contract_{{c.pk}}" class="one_contract fc">
         <div class="profile_head" class="fr">
             <div class="profile_img">
+                <a href="/c/{{c.pk}}">
                 {% if c.poster %}
                 <img src="{{c.poster.url}}"/>
                 {% else %}
                 <img src="{% static 'images/default/16Default.png'%}"></img>
                 {% endif %}
+                </a>
             </div>
+            <a href="/c/{{c.pk}}">
             <h4>
             {{c.title}}
             </h4>
+            </a>
         </div>
         <div class="main_img">
             <div class="poster_img">
@@ -47,7 +53,9 @@
         </div>
         
         <div class="description">
+            <a href="/c/{{c.pk}}">
             {{c.hash}}
+            </a>
             <p>{{c.short_description}}</p>
             <div class="comments">
             <p style="margin-bottom:2px"><b>Likes in bytes:</b>
@@ -55,9 +63,9 @@
             <b class="api_storage_paid"></b></p>
             <p style="margin-top:0px"> a.k.a: <i>storage size / storage paid</i></p>
         </div>
-            <div class="last_updated_c">
-                <p>&#129517 <i> updated </i> @ <i class="api_updated"></i></p>
-                <!-- <p>&#129517 <i> created </i> @ <i class="api_created"></i></p> -->
+            <div class="last_updated_c fr">
+                <p style="margin-right:10px">&#129517 <i> updated </i> @ <i class="api_updated"></i></p>
+                <p>&#128035 <i> created </i> @ <i class="api_created"></i></p>
             </div>
         </div>
     </div>

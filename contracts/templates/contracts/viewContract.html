@@ -1,0 +1,71 @@
+{% extends 'home/starter.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{% static "contracts/css/viewContract.css"%}">
+{% endblock %}
+
+{% block body %}
+
+<div id="profile_wrapper" class="h_cent ac fc">
+    <div id="prof_head" class="fr">
+        <div class="profile_img">
+            {% if contract.poster %}
+                <img src="{{contract.poster.url}}"/>
+            {% else %}
+                <img src="{% static 'images/default/16Default.png'%}"></img>
+            {% endif %}
+        </div>
+        <div id="prof_meta">
+            <div id="prof_title" class="ac fr">
+                <div id="prof_name" class="fr ac">
+                    <h3>{{contract.title}}</h3>
+                    <button id="is_contract" style="width:25px;height:25px;border-radius:50px">&#10004</button>
+                    <!-- placeholder for authenticated! -->
+                </div>
+                <div id="user_action">
+                    {% if user.username %}
+                    {{user}}
+                    <button>Sign Contract</button>
+                    {% else %}
+                    <button onClick="window.location='/login/auth0'">Login</button>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="fr" style="justify-content:space-around">
+                <div class="fc"> <p style="margin-bottom:0px"> <b id="n_ops"> </b> Operations </p>
+                <p style="margin-top:4px"> <i> #followers </i> </p>
+                </div>
+
+                <div class="fc"> <p style="margin-bottom:0px"> <b id="confirmations"> </b> Confirmations </p>
+                <p style="margin-top:4px"> <i> #likes </i> </p>
+                </div>
+
+            </div>
+                <div style="margin-left:24px">
+                <p>Hash: <i id="hash_value">{{contract.hash}}</i></p>
+                <p style="margin:0px"> Gas Price: <b id="gas_price"> </b> </p>
+                <p style="margin:0px"> Storage Limit: <b id="storage_limit"> </b> </p>
+                <p style="margin:0px"> Cycle: <b id="cycle"> </b> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="api_values" class="fc ac">
+
+        <div id="posts"></div>
+
+    </div>
+
+<div id="user_photos">
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'contracts/js/viewContract.js'%}"></script>
+{% endblock %}

@@ -3,7 +3,6 @@ from decouple import config
 import os
 import django_heroku
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "DEFAULT"
@@ -70,6 +69,23 @@ DATABASES = {
     }
 }
 
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = config('SOCIAL_AUTH_AUTH0_DOMAIN')
+SOCIAL_AUTH_AUTH0_KEY = config('SOCIAL_AUTH_AUTH0_KEY')
+SOCIAL_AUTH_AUTH0_SECRET = config('SOCIAL_AUTH_AUTH0_SECRET')
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email'
+]
+
+AUTHENTICATION_BACKENDS = {
+    'users.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.RemoteUserBackend'
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -92,6 +108,9 @@ REST_FRAMEWORK = {
       'rest_framework.permissions.IsAuthenticatedOrReadOnly'
    ]
 }
+
+LOGIN_URL = '/login/auth0'
+LOGIN_REDIRECT_URL = '/home'
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
