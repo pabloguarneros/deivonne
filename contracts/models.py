@@ -9,7 +9,7 @@ def contract_image_directory_path(instance, filename):
 class SmartContract(models.Model): 
 
     def __str__(self):
-        return self.image.path.rsplit('/', 1)[-1]
+        return self.poster.path.rsplit('/', 1)[-1]
     
     title = models.CharField(max_length=140, blank=True)
     poster = models.ImageField(upload_to=contract_image_directory_path)
@@ -26,10 +26,10 @@ class SmartContract(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.poster.path)
 
         if img.height > 450 or img.width > 450:
             new_img = (450, 450)
             img.thumbnail(new_img)
             img = img.convert('RGB') #convert transparency to new image!
-            img.save(self.image.path)  # saving image at the same path
+            img.save(self.poster.path)  # saving image at the same path
