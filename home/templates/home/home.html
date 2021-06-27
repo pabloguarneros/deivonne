@@ -11,6 +11,18 @@
     <div id="stories" class="fr v_cent h_cent">
     </div>
     <div id="new_contracts" class="fr v_cent h_cent">
+    {% for c in contracts %}
+    <div id="contract_{{c.pk}}">
+        <h3>
+            {{c.title}}
+            {{c.short_description}}
+            {{c.poster}}
+            {{c.section}}
+        </h3>
+        <div class="api_info">
+        </div>
+    </div>
+    {% endfor %}
     </div>
 
 
