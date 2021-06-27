@@ -69,10 +69,11 @@ DATABASES = {
     }
 }
 
+#we couldn't find how to do .venv configs on heroku
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
-SOCIAL_AUTH_AUTH0_DOMAIN = config('SOCIAL_AUTH_AUTH0_DOMAIN')
-SOCIAL_AUTH_AUTH0_KEY = config('SOCIAL_AUTH_AUTH0_KEY')
-SOCIAL_AUTH_AUTH0_SECRET = config('SOCIAL_AUTH_AUTH0_SECRET')
+SOCIAL_AUTH_AUTH0_DOMAIN = "pabwarno.us.auth0.com"
+SOCIAL_AUTH_AUTH0_KEY = "7tQhQ2x2k4Lo5Npg1HLdLv5ehLAqSnuu"
+SOCIAL_AUTH_AUTH0_SECRET = "83yNh3EyYG_yw6Kiiaw9UDZ3c137IjEhAygrq53-Ut5Ptp7tDa8n8hvbIiCmGsko"
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
