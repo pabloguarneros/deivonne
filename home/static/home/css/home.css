@@ -75,3 +75,7 @@ width:100%;
 .one_contract .description,.one_contract .api_info{
     padding:10px 20px;
 }
+
+.last_updated_c{
+    font-size: 12px;
+}

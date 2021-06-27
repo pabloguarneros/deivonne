@@ -31,7 +31,7 @@
                 {% else %}
                 <img src="{% static 'images/default/16Default.png'%}"></img>
                 {% endif %}
-                </div>
+            </div>
             <h4>
             {{c.title}}
             </h4>
@@ -45,11 +45,20 @@
             {% endif %}
             </div>
         </div>
+        
         <div class="description">
             {{c.hash}}
             <p>{{c.short_description}}</p>
+            <div class="comments">
+            <p style="margin-bottom:2px"><b>Likes in bytes:</b>
+            <b class="api_storage_size"></b> /
+            <b class="api_storage_paid"></b></p>
+            <p style="margin-top:0px"> a.k.a: <i>storage size / storage paid</i></p>
         </div>
-        <div class="api_info">
+            <div class="last_updated_c">
+                <p>&#129517 <i> updated </i> @ <i class="api_updated"></i></p>
+                <!-- <p>&#129517 <i> created </i> @ <i class="api_created"></i></p> -->
+            </div>
         </div>
     </div>
     {% endfor %}

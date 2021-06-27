@@ -5,16 +5,10 @@ from contracts.models import SmartContract
 from . import serializers
 
 # Create your views here.
-class ContractData(generics.ListCreateAPIView):
+class ContractDataList(generics.ListCreateAPIView):
 
     serializer_class = serializers.ContractSerializer
 
     def get_queryset(self):
-        return SmartContract.objects.all()
 
-class ContractDataDetail(generics.ListCreateAPIView):
-
-    serializer_class = serializers.ContractSerializer
-
-    def get_queryset(self):
-        return SmartContract.objects.all()
+        return SmartContract.objects.all().order_by("-created")[0:20]

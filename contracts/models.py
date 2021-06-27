@@ -22,6 +22,8 @@ class SmartContract(models.Model):
 
     poster = models.ImageField(upload_to=contract_image_directory_path,blank=True)
 
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class SectorArea(models.IntegerChoices):
         NOPOVERTY = 0
